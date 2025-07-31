@@ -3,11 +3,19 @@
 :root {
   --background: #ffffff;
   --foreground: #171717;
+  --light: #F2EADF;
+  --dark: #220701;
+  --hover: #F2F1DF;
+  --main: #2F2F2F ;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
+  --color-light: var(--light);
+  --color-dark: var(--dark);
+  --color-hover: var(--hover);
+  --color-main: var(--main);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
 }
