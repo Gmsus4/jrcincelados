@@ -4,7 +4,6 @@ import { HeroSectionCopy } from '@/components/sections/HeroSection copy';
 import { AboutUs } from '@/components/sections/AboutUs';
 import { FAQs } from '@/components/sections/FAQs';
 import { Contact } from '@/components/sections/Contact';
-import { ContactSection } from '@/components/sections/Contacts';
 import { Testimonials } from '@/components/sections/Testimonials';
 import { Productos } from '@/components/sections/Products';
 
@@ -28,9 +27,6 @@ export default function Home() {
         <Testimonials />
         <FAQs />
         <Contact/>
-        {/* <ContactSection /> */}
-        {/* <CardsCarousel /> */}
-        {/* <FAQSection /> */}
       </main>
       <FooterSection />
     </div>
