@@ -10,25 +10,15 @@ import {
   IconPhone 
 } from "@tabler/icons-react";
 
+import { navItems } from "@/data/navItems";
+import { socialMedia } from "@/data/contact-info";
+
 export function FooterSection() {
-  const quickLinks = [
-    { name: "Inicio", href: "#" },
-    { name: "Catálogo", href: "#" },
-    { name: "Sobre nosotros", href: "#" },
-    { name: "Contacto", href: "#" }
-  ];
-
   const products = [
-    { name: "Carteras", href: "#" },
-    { name: "Cinturones", href: "#" },
-    { name: "Bolsos", href: "#" },
-    { name: "Accesorios", href: "#" }
-  ];
-
-  const socialMedia = [
-    { icon: IconBrandInstagram, href: "https://www.instagram.com/jrcincelados/" },
-    { icon: IconBrandTiktok, href: "https://www.tiktok.com/@jrcincelados" },
-    { icon: IconBrandWhatsapp, href: "https://wa.me/523861184250" }
+    { name: "Carteras", href: "#products" },
+    { name: "Cinturones", href: "#products" },
+    { name: "Bolsos", href: "#products" },
+    { name: "Accesorios", href: "#products" }
   ];
 
   return (
@@ -66,10 +56,10 @@ export function FooterSection() {
                   Enlaces
                 </h4>
                 <ul className="space-y-2 text-sm">
-                  {quickLinks.map((link, index) => (
+                  {navItems.map((link, index) => (
                     <li key={index}>
                       <a 
-                        href={link.href} 
+                        href={link.link} 
                         className="text-neutral-600 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-white transition-colors"
                       >
                         {link.name}
@@ -116,7 +106,7 @@ export function FooterSection() {
                     target="_blank"
                     rel="noopener noreferrer"
                     whileHover={{ scale: 1.1 }}
-                    className="p-2 rounded-full border border-neutral-300 dark:border-neutral-700 hover:bg-neutral-100 dark:hover:bg-neutral-800 transition"
+                    className={`p-2 rounded-full border border-neutral-700 transition duration-700 hover:bg-${social.color}`}
                   >
                     <social.icon className="h-5 w-5 text-neutral-700 dark:text-neutral-300" />
                   </motion.a>

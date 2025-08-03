@@ -49,12 +49,18 @@ export const socialMedia: SocialMedia[] = [
       icon: IconBrandInstagram,
       name: "Instagram",
       href: "https://www.instagram.com/jrcincelados/",
-      color: "hover:text-pink-600"
+      color: "pink-600"
     },
     {
       icon: IconBrandTiktok,
       name: "Tiktok", 
       href: "https://www.tiktok.com/@jrcincelados",
-      color: "hover:text-blue-600"
+      color: "blue-600"
+    },
+    {
+      icon: IconBrandWhatsapp,
+      name: "WhatsApp", 
+      href: "https://wa.me/523861184250",
+      color: "green-600"
     }
 ];
