@@ -1,148 +1,64 @@
 "use client";
 
 import { motion } from "motion/react";
-import { ContainerTextFlip } from "../ui/container-text-flip";
 import Image from "next/image";
+import Link from "next/link";
+import { useState, useEffect } from "react";
+import { Button } from "../ui/button";
+import { IconBrandWhatsappFilled, IconEye } from "@tabler/icons-react";
 
-export function HeroSection() {
-  const fadeInUp = {
-    initial: { opacity: 0, y: 30 },
-    animate: { opacity: 1, y: 0 },
-    transition: { duration: 0.6, ease: "easeOut" }
-  };
+export function HeroSectionCopy() {
+  const [scrollY, setScrollY] = useState(0);
 
-  const staggerContainer = {
-    animate: {
-      transition: {
-        staggerChildren: 0.15
-      }
-    }
-  };
+  useEffect(() => {
+    const handleScroll = () => setScrollY(window.scrollY);
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
   return (
-    <section className="relative w-full min-h-screen flex items-center justify-center overflow-hidden">
-      {/* Background Image */}
-      <div className="absolute inset-0">
-        <Image
-          src="/cintos.jpg"
-          alt="Fondo de cuero artesanal"
-          fill
-          priority
-          className="object-cover"
-          sizes="100vw"
-        />
-        {/* Gradient Overlay */}
-        <div className="absolute inset-0 bg-gradient-to-b from-black/90 via-black/40 to-black/60 dark:from-black/60 dark:via-black/90 dark:to-black/90" />
-      </div>
-
-      {/* Content Container */}
-      <motion.div 
-        className="relative z-10 px-6 py-12 md:py-20 max-w-6xl mx-auto text-center"
-        variants={staggerContainer}
-        initial="initial"
-        animate="animate"
-      >
-        {/* Main Title */}
-        <motion.h1 
-          className="text-4xl md:text-6xl lg:text-7xl px-6 text-center sm:text-6xl font-bold text-white leading-tight mb-6 dark:text-primary"
-          variants={fadeInUp}
-        >
-          {"Cincelado de cuero con calidad"
-            .split(" ")
-            .map((word, index) => (
-              <motion.span
-                key={index}
-                initial={{ opacity: 0, filter: "blur(8px)", y: 20 }}
-                animate={{ opacity: 1, filter: "blur(0px)", y: 0 }}
-                transition={{
-                  duration: 0.5,
-                  delay: index * 0.08,
-                  ease: [0.25, 0.46, 0.45, 0.94],
-                }}
-                className="inline-block mr-3 md:mr-4"
-              >
-                {word}
-              </motion.span>
-            ))}
-          <motion.span
-            initial={{ opacity: 0, scale: 0.8 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{
-              duration: 0.8,
-              delay: 0.6,
-              ease: "backOut",
-            }}
-            className="inline-block bg-primary bg-clip-text text-transparent font-extrabold"
-          >
-            artesanal
-          </motion.span>
-        </motion.h1>
-
-        {/* Subtitle */}
-        <motion.p
-          variants={fadeInUp}
-          className="text-lg md:text-xl text-neutral-600 dark:text-primary/90 max-w-3xl leading-relaxed mx-auto mb-8"
-        >
-          Cada pieza es única, hecha con tradición y materiales de calidad. 
-          <span className="block mt-2 text-secondary font-medium">
-            Transformamos el cuero en arte funcional.
+    <section className="relative w-full min-h-screen bg-stone-50 dark:bg-neutral-950 overflow-hidden h-screen grid grid-cols-12 gap-0 sm:items-end justify-center 2xl:items-center items-center">
+      <div className="col-span-12 flex 2xl:items-center items-start justify-center flex-col z-30 2xl:col-span-7 w-full md:p-20 p-10 2xl:ml-16">
+        <div className="rounded-2xl h-full flex flex-col items-start justify-center gap-6 2xl:w-2xl w-full">
+          <span className="inline-flex items-center bg-green-100 text-green-800 text-xs font-medium px-2.5 py-0.5 rounded-full dark:bg-green-900 dark:text-green-300">
+              <span className="w-2 h-2 me-1 bg-green-500 rounded-full"></span>
+              Calidad Artesanal
           </span>
-        </motion.p>
+          {/* <div className="inline-flex items-center px-3 py-1 bg-amber-100/80 backdrop-blur-sm border border-amber-200/50 rounded-full">
+            <div className="w-1.5 h-1.5 bg-amber-500 rounded-full mr-2"></div>
+            <span className="text-amber-800 font-medium text-xs uppercase tracking-wider">Calidad Artesanal</span>
+          </div> */}
+          <span className="md:text-6xl text-5xl">Cada pieza habla de autenticidad, fuerza y dedicación.</span>
+          <h1 className="md:text-2xl text-xl 2xl:w-full md:w-4/5 w-full">Creamos cinturones, fundas y accesorios de cuero, <br /> hechos a mano para quienes valoran lo auténtico y duradero.</h1>
+          {/* <Button title="Work with us" btnColor="bg-dark" textColor="text-white" circleColor="bg-white" btnColorFull="bg-white" textColorHover="text-dark" url="/contact" icon={<Icon24Hours className="text-dark" />} /> */}
+          <Button title="Contáctanos" circleColor="bg-white" btnColorFull="bg-white" btnColor="bg-dark" textColor="text-white" textColorHover="group-hover:text-dark" url="/contact" icon={<IconBrandWhatsappFilled className="text-dark"/>} />
 
-        {/* Decorative Element */}
-        <motion.div
-          initial={{ opacity: 0, scale: 0 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.8, delay: 0.4 }}
-          className="w-24 h-1 bg-gradient-to-r from-primary to-secondary mx-auto mb-10 rounded-full"
+          {/* Investigar que pedo de por que no se pone el texto en negro al hacer hover */}
+        </div>
+      </div>
+      <div className="p-5 col-span-5 rounded-4xl overflow-hidden h-screen hidden 2xl:flex inset-0">
+        <Image
+          alt=""
+          src="https://images.pexels.com/photos/1697220/pexels-photo-1697220.jpeg"
+          quality={95}
+          width={1200}
+          height={800}
+          unoptimized={true}
+          className="w-full h-full object-cover rounded-2xl"
         />
-
-        {/* CTA Buttons */}
-        <motion.div
-          variants={fadeInUp}
-          className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-6"
-        >
-          <motion.button
-            whileHover={{ 
-              scale: 1.05,
-              boxShadow: "0 20px 40px rgba(0,0,0,0.3)"
-            }}
-            whileTap={{ scale: 0.95 }}
-            className="group relative overflow-hidden rounded-2xl cursor-pointer bg-secondary px-8 py-4 text-lg font-semibold text-dark shadow-2xl transition-all duration-300 hover:shadow-amber-500/25 min-w-[200px]"
-          >
-            <span className="relative z-10">Ver productos</span>
-            <div className="absolute inset-0 opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
-          </motion.button>
-
-          <motion.button
-            whileHover={{ 
-              scale: 1.05,
-              backgroundColor: "rgba(255,255,255,0.1)"
-            }}
-            whileTap={{ scale: 0.95 }}
-            className="group relative overflow-hidden rounded-2xl cursor-pointer border-2 border-white/30 bg-white/10 backdrop-blur-sm px-8 py-4 text-lg font-semibold text-white transition-all duration-300 hover:border-white/50 min-w-[200px]"
-          >
-            <span className="relative z-10">Contáctanos</span>
-            <div className="absolute inset-0 bg-white/5 opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
-          </motion.button>
-        </motion.div>
-
-        {/* Scroll Indicator */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 1.2 }}
-          className="absolute -bottom-20 left-1/2 transform -translate-x-1/2 hidden sm:flex"
-        >
-          <motion.div
-            animate={{ y: [0, 8, 0] }}
-            transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
-            className="w-6 h-10 border-2 border-white/50 rounded-full flex justify-center"
-          >
-            <div className="w-1 h-3 bg-white/70 rounded-full mt-2" />
-          </motion.div>
-        </motion.div>
-      </motion.div>
+      </div>
+      <div className="2xl:hidden flex absolute inset-0 z-10 h-screen ">
+        <Image
+          alt=""
+          src="https://images.pexels.com/photos/1697220/pexels-photo-1697220.jpeg"
+          quality={95}
+          width={1200}
+          height={800}
+          unoptimized={true}
+          className="w-full h-screen object-cover"
+        />
+        <div className="absolute inset-0 bg-black opacity-75"></div>
+      </div>
     </section>
   );
 }

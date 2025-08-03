@@ -1,6 +1,6 @@
 import { NavbarResizable } from '../components/navbarResizable';
 import { FooterSection } from "@/components/sections/Footer";
-import { HeroSectionCopy } from '@/components/sections/HeroSection copy';
+import { HeroSectionCopy } from '@/components/sections/HeroSection';
 import { AboutUs } from '@/components/sections/AboutUs';
 import { FAQs } from '@/components/sections/FAQs';
 import { Contact } from '@/components/sections/Contact';
