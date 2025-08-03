@@ -12,23 +12,9 @@ import {
 } from "@/components/ui/resizable-navbar";
 import { IconBrandWhatsapp } from "@tabler/icons-react";
 import { useState } from "react";
+import { navItems } from "@/data/navItems";
 
 export function NavbarResizable() {
-  const navItems = [
-    {
-      name: "Features",
-      link: "#features",
-    },
-    {
-      name: "Pricing",
-      link: "#pricing",
-    },
-    {
-      name: "Contact",
-      link: "#contact",
-    },
-  ];
-
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   return (
@@ -42,7 +28,6 @@ export function NavbarResizable() {
             {/* <NavbarButton variant="secondary">Login</NavbarButton> */}
             <NavbarButton href="" variant="primary" className="flex gap-2 items-center group relative overflow-hidden rounded-2xl cursor-pointer border-2 border-white/30 bg-white/10 backdrop-blur-sm font-semibold text-white transition-all duration-300 hover:border-white/50">
               <IconBrandWhatsapp/>
-              Contáctanos
             </NavbarButton>
           </div>
         </NavBody>

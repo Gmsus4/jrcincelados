@@ -1,53 +1,11 @@
 import Link from "next/link"
 import { Title } from "../ui/title"
-import { IconBrandInstagram, IconBrandTiktok, IconBrandWhatsapp, IconMail, IconMapPin, IconPhone } from "@tabler/icons-react"
 import Image from "next/image";
+import { contact as contactInfo, socialMedia, imageContact } from "@/data/contact-info";
 
 export const Contact = () => {
-      const contactInfo = [
-    {
-      icon: IconPhone,
-      title: "Teléfono",
-      value: "+52 386 118 4250",
-      href: "tel:+523861184250"
-    },
-    {
-      icon: IconBrandWhatsapp,
-      title: "WhatsApp",
-      value: "+52 386 118 4250",
-      href: "https://wa.me/523861184250"
-    },
-    {
-      icon: IconMail,
-      title: "Email",
-      value: "contacto@cinceladocuero.com",
-      href: "mailto:contacto@cinceladocuero.com"
-    },
-    {
-      icon: IconMapPin,
-      title: "Ubicación",
-      value: "San Juanito de Escobedo, MX",
-      href: "#"
-    }
-  ];
-
-  const socialMedia = [
-    {
-      icon: IconBrandInstagram,
-      name: "Instagram",
-      href: "https://www.instagram.com/jrcincelados/",
-      color: "hover:text-pink-600"
-    },
-    {
-      icon: IconBrandTiktok,
-      name: "Tiktok", 
-      href: "https://www.tiktok.com/@jrcincelados",
-      color: "hover:text-blue-600"
-    }
-  ];
-
   return (
-    <div className="h-auto w-full place-items-center grid md:bg-white bg-darkB px-4 py-8 md:px-0 md:py-0">
+    <div className="h-auto w-full place-items-center grid md:bg-white bg-darkB px-4 py-8 md:px-0 md:py-0" id="contact">
       {/* Nuevo div verde con márgenes */}
       <div className="w-[98%] h-[98%] bg-darkB rounded-lg flex items-center justify-center">
         <div className="grid grid-cols-5 gap-20 max-w-7xl m-auto md:p-20 sm:p-10 sm:pt-36 p-4 w-full">
@@ -97,7 +55,7 @@ export const Contact = () => {
           </div>
           <div className="2xl:col-span-2 col-span-5 rounded-xl hidden 2xl:flex relative h-[auto] w-full">
             <Image
-              src="https://images.pexels.com/photos/6837095/pexels-photo-6837095.jpeg"
+              src={imageContact}
               fill
               className="object-cover rounded-xl"
               alt="Imagen de contacto"

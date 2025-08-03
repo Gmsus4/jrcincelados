@@ -2,7 +2,7 @@ import { Title } from "../ui/title"
 
 export const AboutUs = () => {
   return (
-    <div className="w-full md:h-screen h-auto bg-white">
+    <div className="w-full md:h-screen h-auto bg-white" id="about">
       <div className="max-w-[1500px] m-auto md:grid md:grid-cols-12 flex flex-col gap-10 items-end justify-start md:p-20 p-10 pt-36">
         <div className="w-full flex flex-col gap-2 2xl:col-span-4 col-span-12">
           <Title title={"Sobre nosotros"}/>

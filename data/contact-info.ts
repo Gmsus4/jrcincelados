@@ -1,0 +1,60 @@
+import { IconBrandInstagram, IconBrandTiktok, IconBrandWhatsapp, IconMail, IconMapPin, IconPhone } from "@tabler/icons-react";
+import type { Icon } from "@tabler/icons-react"
+
+export interface Contact {
+    icon: Icon;
+    title: string;
+    value: string; 
+    href: string;
+}
+
+export interface SocialMedia {
+    icon: Icon;
+    name: string;
+    href: string;
+    color: string; 
+}
+
+export const imageContact = "https://images.pexels.com/photos/33245726/pexels-photo-33245726.jpeg";
+
+export const contact: Contact[] = [
+    {
+      icon: IconPhone,
+      title: "Teléfono",
+      value: "+52 386 118 4250",
+      href: "tel:+523861184250"
+    },
+    {
+      icon: IconBrandWhatsapp,
+      title: "WhatsApp",
+      value: "+52 386 118 4250",
+      href: "https://wa.me/523861184250"
+    },
+    {
+      icon: IconMail,
+      title: "Email",
+      value: "contacto@cinceladocuero.com",
+      href: "mailto:contacto@cinceladocuero.com"
+    },
+    {
+      icon: IconMapPin,
+      title: "Ubicación",
+      value: "San Juanito de Escobedo, MX",
+      href: "#"
+    }
+]
+
+export const socialMedia: SocialMedia[] = [
+    {
+      icon: IconBrandInstagram,
+      name: "Instagram",
+      href: "https://www.instagram.com/jrcincelados/",
+      color: "hover:text-pink-600"
+    },
+    {
+      icon: IconBrandTiktok,
+      name: "Tiktok", 
+      href: "https://www.tiktok.com/@jrcincelados",
+      color: "hover:text-blue-600"
+    }
+];

@@ -3,82 +3,12 @@ import { IconStar, IconStarFilled } from "@tabler/icons-react";
 import { InfiniteMovingCards } from "../ui/infinite-moving-cards";
 import { Title } from "../ui/title";
 import { useState, useEffect, useRef, SetStateAction } from "react";
+import { testimonials as dataTestimonials } from "@/data/testimonials";
 
-const testimonials = [
-  {
-    quote:
-      "El diseño artesanal es precioso y se nota que cada cinturón está hecho con dedicación. Me hubiera gustado una opción de empaque más elegante, pero el producto es excelente.",
-    name: "Luis Estrada",
-    title: "Cliente exigente",
-    stars: 4
-  },
-  {
-    quote:
-      "La atención fue rápida y cordial. El cinturón luce muy bien, aunque al principio el cuero estaba un poco rígido, con el uso se fue suavizando.",
-    name: "Gabriela Ortega",
-    title: "Compradora satisfecha",
-    stars: 5
-  },
-  {
-    quote:
-      "Una excelente opción si buscas algo diferente y hecho a mano. Me gustó mucho el diseño, aunque creo que podrían incluir más fotos del producto en la página.",
-    name: "Javier Peña",
-    title: "Fan del diseño rústico",
-    stars: 5
-  },
-  {
-    quote:
-      "Muy buena calidad y se nota el trabajo manual. Lo único que cambiaría es que el envío viniera con una pequeña tarjeta explicando el proceso artesanal. Eso sumaría valor.",
-    name: "Natalia Silva",
-    title: "Amante de lo artesanal",
-    stars: 5
-  },
-  {
-    quote:
-      "El cinturón se ve mejor en persona que en las fotos. Gran detalle en el cincelado. Me hubiera gustado tener más opciones para personalizarlo, pero quedé muy contento.",
-    name: "Álvaro Medina",
-    title: "Cliente contento",
-    stars: 5
-  }
-];
+const middleIndex = Math.ceil(dataTestimonials.length / 2);
 
-const testimonials2 = [
-  {
-    quote:
-      "El cinturón está muy bien hecho, se nota que es artesanal. Me hubiera gustado que el color fuera un poco más oscuro, pero en general estoy satisfecho.",
-    name: "Elena Vargas",
-    title: "Cliente detallista",
-    stars: 4
-  },
-  {
-    quote:
-      "Muy buena calidad y excelente presentación. El envío tardó un par de días más, pero la espera valió la pena por el resultado.",
-    name: "Roberto Méndez",
-    title: "Comprador puntual",
-    stars: 5
-  },
-  {
-    quote:
-      "El diseño es muy bonito y el cuero se siente de alta calidad. Tal vez sería útil tener una guía de tallas más clara en la página.",
-    name: "Isabel Ríos",
-    title: "Compradora práctica",
-    stars: 4
-  },
-  {
-    quote:
-      "Me gustó mucho el acabado y el grabado personalizado. El empaque era sencillo, pero el cinturón como tal superó mis expectativas.",
-    name: "Carlos Paredes",
-    title: "Cliente satisfecho",
-    stars: 5
-  },
-  {
-    quote:
-      "Es un cinturón con carácter, diferente a lo que se encuentra en tiendas comunes. Aunque el precio es algo elevado, entiendo que es un trabajo artesanal.",
-    name: "Fernanda Molina",
-    title: "Amante del diseño único",
-    stars: 5
-  }
-];
+const testimonials = dataTestimonials.slice(0, middleIndex);
+const testimonials2 = dataTestimonials.slice(middleIndex);
 
 export const Testimonials = () => {
     const allTestimonials = [...testimonials, ...testimonials2];
@@ -169,7 +99,7 @@ export const Testimonials = () => {
     }, []);
     
     return (
-        <div className="w-full h-auto grid place-items-center gap-10 py-20 bg-white">
+        <div className="w-full h-auto grid place-items-center gap-10 py-20 bg-white" id="testimonials">
             <div className="max-w-3xl flex flex-col items-center gap-6 p-4">
                 <div className="grid">
                     <Title title="Testimoniales"/>
@@ -237,7 +167,7 @@ export const Testimonials = () => {
                                                 {testimonial.name}
                                             </p>
                                             <p className="text-sm text-gray-500">
-                                                {testimonial.title}
+                                                {testimonial.location}
                                             </p>
                                         </div>
                                     </blockquote>

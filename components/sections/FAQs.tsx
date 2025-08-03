@@ -6,7 +6,7 @@ import { FAQSection } from "../ui/faqs"
 
 export const FAQs = () => {
   return (
-    <div className="md:min-h-screen h-auto w-full bg-white">
+    <div className="md:min-h-screen h-auto w-full bg-white" id="faqs">
         <div className="grid grid-cols-5 gap-10 items-start max-w-7xl m-auto md:p-20 sm:p-10 sm:pt-36 p-4">
             <div className="2xl:col-span-2 col-span-5 2xl:sticky 2xl:top-30 self-start flex flex-col gap-6 items-center justify-center 2xl:items-start 2xl:justify-start h-fit">
                 <div className="grid place-items-center">
