@@ -27,7 +27,7 @@ export function CardsCarousel() {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
             viewport={{ once: true }}
-            className="text-sm md:text-base font-medium text-amber-600 dark:text-amber-400 uppercase tracking-wider mb-4"
+            className="text-sm md:text-base font-medium text-primary dark:text-primary uppercase tracking-wider mb-4"
           >
             Nuestra colección
           </motion.p>
@@ -38,7 +38,7 @@ export function CardsCarousel() {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.1 }}
             viewport={{ once: true }}
-            className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold bg-gradient-to-r from-amber-400 to-orange-500 bg-clip-text text-transparent dark:from-amber-400 dark:to-orange-500 mb-6 leading-tight"
+            className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold bg-primary bg-clip-text text-transparent mb-6 leading-tight"
           >
             Productos Artesanales
           </motion.h2>
@@ -49,10 +49,10 @@ export function CardsCarousel() {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.3 }}
             viewport={{ once: true }}
-            className="text-lg md:text-xl text-neutral-600 dark:text-neutral-300 max-w-3xl mx-auto leading-relaxed"
+            className="text-lg md:text-xl text-neutral-600 dark:text-primary/90 max-w-3xl mx-auto leading-relaxed"
           >
             Cada pieza cuenta una historia de tradición y dedicación. 
-            <span className="font-medium text-amber-700 dark:text-amber-300">
+            <span className="font-medium text-amber-700 dark:text-secondary">
               {" "}Descubre la belleza del cuero trabajado a mano.
             </span>
           </motion.p>
@@ -63,7 +63,7 @@ export function CardsCarousel() {
             whileInView={{ width: "6rem" }}
             transition={{ duration: 1, delay: 0.5 }}
             viewport={{ once: true }}
-            className="h-1 bg-gradient-to-r from-amber-500 to-orange-500 mx-auto mt-8 rounded-full"
+            className="h-1 bg-gradient-to-r from-primary to-secondary mx-auto mt-8 rounded-full"
           />
         </motion.div>
       </div>

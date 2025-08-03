@@ -1,202 +1,147 @@
 "use client";
 
 import { motion } from "motion/react";
-import { useState, useEffect } from "react";
+import { ContainerTextFlip } from "../ui/container-text-flip";
+import Image from "next/image";
 
 export function HeroSection() {
-  const [scrollY, setScrollY] = useState(0);
+  const fadeInUp = {
+    initial: { opacity: 0, y: 30 },
+    animate: { opacity: 1, y: 0 },
+    transition: { duration: 0.6, ease: "easeOut" }
+  };
 
-  useEffect(() => {
-    const handleScroll = () => setScrollY(window.scrollY);
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
+  const staggerContainer = {
+    animate: {
+      transition: {
+        staggerChildren: 0.15
+      }
+    }
+  };
 
   return (
-    <section className="relative w-full min-h-screen bg-stone-50 dark:bg-neutral-950 overflow-hidden">
-      {/* Elegant Background Elements */}
+    <section className="relative w-full min-h-screen flex items-center justify-center overflow-hidden">
+      {/* Background Image */}
       <div className="absolute inset-0">
-        {/* Subtle diagonal lines */}
-        <div className="absolute top-0 right-0 w-full h-full opacity-5">
-          <div className="w-full h-full" style={{
-            backgroundImage: `linear-gradient(45deg, transparent 40%, rgba(0,0,0,0.1) 50%, transparent 60%)`,
-            backgroundSize: '120px 120px'
-          }} />
-        </div>
-        
-        {/* Floating geometric accent */}
-        <motion.div
-          animate={{ 
-            rotate: [0, 360],
-            scale: [1, 1.1, 1]
-          }}
-          transition={{
-            duration: 20,
-            repeat: Infinity,
-            ease: "linear"
-          }}
-          className="absolute top-1/4 right-1/6 w-1 h-32 bg-gradient-to-b from-amber-600 to-transparent opacity-20"
-          style={{ transformOrigin: 'bottom center' }}
+        <Image
+          src="/cintos.jpg"
+          alt="Fondo de cuero artesanal"
+          fill
+          priority
+          className="object-cover"
+          sizes="100vw"
         />
+        {/* Gradient Overlay */}
+        <div className="absolute inset-0 bg-gradient-to-b from-black/90 via-black/40 to-black/60 dark:from-black/60 dark:via-black/90 dark:to-black/90" />
       </div>
 
-      {/* Main Content Grid Layout */}
-      <div className="relative z-10 min-h-screen grid grid-cols-12 gap-8 px-8 py-16">
-        
-        {/* Left Column - Content */}
-        <div className="col-span-12 lg:col-span-7 flex flex-col justify-center">
-          
-          {/* Minimal Tag */}
-          <motion.div
-            initial={{ opacity: 0, x: -20 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8 }}
-            className="flex items-center gap-3 mb-8"
-          >
-            <div className="w-12 h-0.5 bg-amber-600" />
-            <span className="text-sm font-medium text-stone-600 dark:text-neutral-400 uppercase tracking-wider">
-              Artesanía Premium
-            </span>
-          </motion.div>
-
-          {/* Typography Hierarchy */}
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
-            className="mb-6"
-          >
-            <h1 className="text-5xl md:text-7xl lg:text-8xl font-light text-stone-900 dark:text-white leading-none mb-4">
-              Cuero
-            </h1>
-            <div className="flex items-baseline gap-4">
-              <h2 className="text-2xl md:text-3xl font-medium text-amber-600 tracking-wide">
-                Artesanal
-              </h2>
-              <div className="flex-1 h-px bg-stone-300 dark:bg-neutral-700 mt-4" />
-            </div>
-          </motion.div>
-
-          {/* Refined Description */}
-          <motion.p
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 0.8, delay: 0.4 }}
-            className="text-lg text-stone-600 dark:text-neutral-400 max-w-lg leading-relaxed mb-12 font-light"
-          >
-            Donde cada pieza narra una historia de tradición, 
-            precisión y elegancia atemporal.
-          </motion.p>
-
-          {/* Sophisticated CTAs */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.6 }}
-            className="flex items-center gap-8"
-          >
-            <motion.button
-              whileHover={{ x: 5 }}
-              whileTap={{ scale: 0.98 }}
-              className="group flex items-center gap-3 text-stone-900 dark:text-white font-medium text-lg"
-            >
-              <span>Explorar colección</span>
-              <motion.div
-                className="w-12 h-px bg-amber-600"
-                whileHover={{ width: 20 }}
-                transition={{ duration: 0.3 }}
-              />
-              <motion.span
-                animate={{ x: [0, 5, 0] }}
-                transition={{ duration: 2, repeat: Infinity }}
-                className="text-amber-600"
-              >
-                →
-              </motion.span>
-            </motion.button>
-
-            <motion.button
-              whileHover={{ scale: 1.02 }}
-              whileTap={{ scale: 0.98 }}
-              className="text-stone-500 dark:text-neutral-500 font-medium underline underline-offset-4 decoration-1 hover:text-amber-600 hover:decoration-amber-600 transition-colors"
-            >
-              Contactar
-            </motion.button>
-          </motion.div>
-        </div>
-
-        {/* Right Column - Visual Element */}
-        <div className="col-span-12 lg:col-span-5 flex items-center justify-center relative">
-          <motion.div
-            initial={{ opacity: 0, scale: 0.9 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 1, delay: 0.8 }}
-            className="relative"
-          >
-            {/* Main Image Container */}
-            <div className="relative w-80 h-96 md:w-96 md:h-[500px]">
-              <motion.div
-                style={{ y: scrollY * -0.1 }}
-                className="absolute inset-0 bg-gradient-to-br from-amber-100 to-stone-200 dark:from-neutral-800 dark:to-neutral-900 rounded-sm shadow-2xl"
-              />
-              
-              {/* Image overlay */}
-              <div className="absolute inset-4 bg-stone-900 dark:bg-neutral-100 rounded-sm overflow-hidden">
-                <img 
-                  src="/floreado.jpg" 
-                  alt="Artesanía en cuero"
-                  className="w-full h-full object-cover opacity-90 dark:opacity-80"
-                />
-                {/* Subtle overlay */}
-                <div className="absolute inset-0 bg-gradient-to-t from-stone-900/50 to-transparent dark:from-neutral-100/50" />
-              </div>
-
-              {/* Floating accent */}
-              <motion.div
-                animate={{ y: [-10, 10, -10] }}
-                transition={{ duration: 6, repeat: Infinity }}
-                className="absolute -top-6 -right-6 w-24 h-24 border border-amber-600/30 rounded-full"
-              />
-            </div>
-          </motion.div>
-        </div>
-      </div>
-
-      {/* Bottom Stats Bar */}
-      <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8, delay: 1 }}
-        className="absolute bottom-8 left-8 right-8"
+      {/* Content Container */}
+      <motion.div 
+        className="relative z-10 px-6 py-12 md:py-20 max-w-6xl mx-auto text-center"
+        variants={staggerContainer}
+        initial="initial"
+        animate="animate"
       >
-        <div className="flex justify-between items-center py-6 border-t border-stone-200 dark:border-neutral-800">
-          <div className="flex items-center gap-12">
-            {[
-              { number: "500+", label: "Piezas únicas" },
-              { number: "15", label: "Años maestría" },
-              { number: "100%", label: "Hecho a mano" }
-            ].map((stat, index) => (
-              <div key={index} className="text-center">
-                <div className="text-xl font-medium text-stone-900 dark:text-white">
-                  {stat.number}
-                </div>
-                <div className="text-xs text-stone-500 dark:text-neutral-500 uppercase tracking-wider">
-                  {stat.label}
-                </div>
-              </div>
+        {/* Main Title */}
+        <motion.h1 
+          className="text-4xl md:text-6xl lg:text-7xl px-6 text-center sm:text-6xl font-bold text-white leading-tight mb-6 dark:text-primary"
+          variants={fadeInUp}
+        >
+          {"Cincelado de cuero con calidad"
+            .split(" ")
+            .map((word, index) => (
+              <motion.span
+                key={index}
+                initial={{ opacity: 0, filter: "blur(8px)", y: 20 }}
+                animate={{ opacity: 1, filter: "blur(0px)", y: 0 }}
+                transition={{
+                  duration: 0.5,
+                  delay: index * 0.08,
+                  ease: [0.25, 0.46, 0.45, 0.94],
+                }}
+                className="inline-block mr-3 md:mr-4"
+              >
+                {word}
+              </motion.span>
             ))}
-          </div>
-          
-          {/* Scroll indicator */}
-          <motion.div
-            animate={{ y: [0, 5, 0] }}
-            transition={{ duration: 2, repeat: Infinity }}
-            className="flex flex-col items-center gap-2 text-stone-400 dark:text-neutral-500"
+          <motion.span
+            initial={{ opacity: 0, scale: 0.8 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{
+              duration: 0.8,
+              delay: 0.6,
+              ease: "backOut",
+            }}
+            className="inline-block bg-primary bg-clip-text text-transparent font-extrabold"
           >
-            <span className="text-xs uppercase tracking-wider">Scroll</span>
-            <div className="w-px h-8 bg-current" />
+            artesanal
+          </motion.span>
+        </motion.h1>
+
+        {/* Subtitle */}
+        <motion.p
+          variants={fadeInUp}
+          className="text-lg md:text-xl text-neutral-600 dark:text-primary/90 max-w-3xl leading-relaxed mx-auto mb-8"
+        >
+          Cada pieza es única, hecha con tradición y materiales de calidad. 
+          <span className="block mt-2 text-secondary font-medium">
+            Transformamos el cuero en arte funcional.
+          </span>
+        </motion.p>
+
+        {/* Decorative Element */}
+        <motion.div
+          initial={{ opacity: 0, scale: 0 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.8, delay: 0.4 }}
+          className="w-24 h-1 bg-gradient-to-r from-primary to-secondary mx-auto mb-10 rounded-full"
+        />
+
+        {/* CTA Buttons */}
+        <motion.div
+          variants={fadeInUp}
+          className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-6"
+        >
+          <motion.button
+            whileHover={{ 
+              scale: 1.05,
+              boxShadow: "0 20px 40px rgba(0,0,0,0.3)"
+            }}
+            whileTap={{ scale: 0.95 }}
+            className="group relative overflow-hidden rounded-2xl cursor-pointer bg-secondary px-8 py-4 text-lg font-semibold text-dark shadow-2xl transition-all duration-300 hover:shadow-amber-500/25 min-w-[200px]"
+          >
+            <span className="relative z-10">Ver productos</span>
+            <div className="absolute inset-0 opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
+          </motion.button>
+
+          <motion.button
+            whileHover={{ 
+              scale: 1.05,
+              backgroundColor: "rgba(255,255,255,0.1)"
+            }}
+            whileTap={{ scale: 0.95 }}
+            className="group relative overflow-hidden rounded-2xl cursor-pointer border-2 border-white/30 bg-white/10 backdrop-blur-sm px-8 py-4 text-lg font-semibold text-white transition-all duration-300 hover:border-white/50 min-w-[200px]"
+          >
+            <span className="relative z-10">Contáctanos</span>
+            <div className="absolute inset-0 bg-white/5 opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
+          </motion.button>
+        </motion.div>
+
+        {/* Scroll Indicator */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 1.2 }}
+          className="absolute -bottom-20 left-1/2 transform -translate-x-1/2 hidden sm:flex"
+        >
+          <motion.div
+            animate={{ y: [0, 8, 0] }}
+            transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
+            className="w-6 h-10 border-2 border-white/50 rounded-full flex justify-center"
+          >
+            <div className="w-1 h-3 bg-white/70 rounded-full mt-2" />
           </motion.div>
-        </div>
+        </motion.div>
       </motion.div>
     </section>
   );

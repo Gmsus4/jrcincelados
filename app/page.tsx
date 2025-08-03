@@ -1,14 +1,18 @@
-import { CardsCarousel } from '@/components/CardsCarrousel';
 import { NavbarResizable } from '../components/navbarResizable';
-import { ContactSection } from "@/components/sections/Contact";
-import { FAQSection } from "@/components/sections/FAQ";
 import { FooterSection } from "@/components/sections/Footer";
-import { HeroSection } from '@/components/sections/HeroSection';
+import { HeroSectionCopy } from '@/components/sections/HeroSection copy';
+import { AboutUs } from '@/components/sections/AboutUs';
+import { FAQs } from '@/components/sections/FAQs';
+import { Contact } from '@/components/sections/Contact';
+import { ContactSection } from '@/components/sections/Contacts';
+import { Testimonials } from '@/components/sections/Testimonials';
+import { Productos } from '@/components/sections/Products';
 
 
-/* Testimoniales
+/*
 Proceso de elaboracion
-Sobre nosotros / Sobre mi */
+Productos
+*/
 
 export default function Home() {
   return (
@@ -17,10 +21,16 @@ export default function Home() {
         <NavbarResizable />
       </header>
       <main className="w-full h-full">
-        <HeroSection />
-        <CardsCarousel />
-        <ContactSection />
-        <FAQSection />
+        {/* <HeroSection /> */}
+        <HeroSectionCopy />
+        <AboutUs />
+        <Productos />
+        <Testimonials />
+        <FAQs />
+        <Contact/>
+        {/* <ContactSection /> */}
+        {/* <CardsCarousel /> */}
+        {/* <FAQSection /> */}
       </main>
       <FooterSection />
     </div>
