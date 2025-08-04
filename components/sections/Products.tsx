@@ -356,7 +356,7 @@ export const Products = () => {
 
   return (
     <>
-      <div className="md:min-h-screen h-auto w-full bg-gray-50 py-20" id="products">
+      <div className="md:min-h-screen h-auto w-full bg-gray-50 pb-20" id="products">
         <div className="max-w-7xl mx-auto md:p-20 sm:p-10 sm:pt-36 p-4">
           
           {/* Header */}

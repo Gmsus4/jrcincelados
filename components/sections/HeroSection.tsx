@@ -4,6 +4,7 @@ import Image from "next/image";
 import { useState, useEffect } from "react";
 import { Button } from "../ui/button";
 import { IconBrandWhatsappFilled, IconShoppingBag } from "@tabler/icons-react";
+import { contact } from "@/data/contact-info";
 
 export function HeroSection() {
   const [scrollY, setScrollY] = useState(0);
@@ -30,8 +31,8 @@ export function HeroSection() {
           <h1 className="md:text-2xl text-xl 2xl:w-full md:w-4/5 w-full text-caballo">Creamos cinturones, fundas y accesorios de cuero, <br /> hechos a mano para quienes valoran lo auténtico y duradero.</h1>
           {/* <Button title="Work with us" btnColor="bg-dark" textColor="text-white" circleColor="bg-white" btnColorFull="bg-white" textColorHover="text-dark" url="/contact" icon={<Icon24Hours className="text-dark" />} /> */}
           <div className="flex md:flex-row flex-col gap-4">
-            <Button title="Ver productos" circleColor="bg-white" btnColorFull="bg-white" btnColor="bg-dark" textColor="text-white" textColorHover="group-hover:text-dark" url={`#products`} icon={<IconShoppingBag className="text-dark"/>}/>
-            <Button title="Contáctanos por WhatsApp" circleColor="bg-green-500" btnColorFull="bg-green-500" btnColor="bg-dark" textColor="text-white" textColorHover="group-hover:text-white" url={``} icon={<IconBrandWhatsappFilled className="text-white"/>} />
+            <Button title="Ver productos" circleColor="bg-white" btnColorFull="bg-white" btnColor="bg-darkB" textColor="text-white" textColorHover="group-hover:text-dark" url={`#products`} icon={<IconShoppingBag className="text-dark"/>}/>
+            <Button isTargetBlank={true} title="Contáctanos por WhatsApp" circleColor="bg-green-500" btnColorFull="bg-green-500" btnColor="bg-darkB" textColor="text-white" textColorHover="group-hover:text-white" url={contact[1].href} icon={<IconBrandWhatsappFilled className="text-white"/>} />
           </div>
 
           {/* Investigar que pedo de por que no se pone el texto en negro al hacer hover */}
@@ -40,7 +41,7 @@ export function HeroSection() {
       <div className="p-5 col-span-5 rounded-4xl overflow-hidden h-screen hidden 2xl:flex inset-0">
         <Image
           alt=""
-          src="https://images.pexels.com/photos/1697220/pexels-photo-1697220.jpeg"
+          src="https://images.pexels.com/photos/6653232/pexels-photo-6653232.jpeg"
           quality={95}
           width={1200}
           height={800}
@@ -51,7 +52,7 @@ export function HeroSection() {
       <div className="2xl:hidden flex absolute inset-0 z-10 h-screen ">
         <Image
           alt=""
-          src="https://images.pexels.com/photos/1697220/pexels-photo-1697220.jpeg"
+          src="https://images.pexels.com/photos/6653232/pexels-photo-6653232.jpeg"
           quality={95}
           width={1200}
           height={800}

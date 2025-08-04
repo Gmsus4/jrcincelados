@@ -30,7 +30,7 @@ function FAQs({ faq, isOpen, onToggle, index }: FAQItemProps) {
     <motion.div
       animate={{ rotate: isOpen ? 45 : 0 }}
       transition={{ duration: 0.2 }}
-      className="w-6 h-6 text-neutral-500 group-hover:text-neutral-900 dark:text-neutral-400 dark:group-hover:text-white"
+      className="w-6 h-6 text-neutral-400 group-hover:text-white"
     >
       <IconPlus className="w-full h-full" />
     </motion.div>
@@ -45,7 +45,7 @@ function FAQs({ faq, isOpen, onToggle, index }: FAQItemProps) {
         transition={{ duration: 0.3, ease: "easeInOut" }}
         className="overflow-hidden"
       >
-        <div className="px-4 pb-5 pl-10 md:text-lg text-neutral-600 dark:text-neutral-400 text-sm leading-relaxed">
+        <div className="px-4 pb-5 pl-10 md:text-lg text-neutral-600 text-sm leading-relaxed">
           {faq.answer}
         </div>
       </motion.div>

@@ -15,7 +15,7 @@ export interface SocialMedia {
     color: string; 
 }
 
-export const imageContact = "https://images.pexels.com/photos/33245726/pexels-photo-33245726.jpeg";
+export const imageContact = "https://images.pexels.com/photos/162520/farmer-man-shepherd-dog-162520.jpeg";
 
 export const contact: Contact[] = [
     {
