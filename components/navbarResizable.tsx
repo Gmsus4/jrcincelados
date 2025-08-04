@@ -65,7 +65,7 @@ export function NavbarResizable() {
               >
                 Login
               </NavbarButton> */}
-              <NavbarButton
+              {/* <NavbarButton
                 href=""
                 onClick={() => setIsMobileMenuOpen(false)}
                 variant="primary"
@@ -73,7 +73,7 @@ export function NavbarResizable() {
               >
               <IconBrandWhatsapp />
                 Contáctanos
-              </NavbarButton>
+              </NavbarButton> */}
             </div>
           </MobileNavMenu>
         </MobileNav>

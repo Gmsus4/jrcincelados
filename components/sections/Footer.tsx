@@ -11,7 +11,8 @@ import {
 } from "@tabler/icons-react";
 
 import { navItems } from "@/data/navItems";
-import { socialMedia } from "@/data/contact-info";
+import { socialMedia, contact } from "@/data/contact-info";
+import Link from "next/link";
 
 export function FooterSection() {
   const products = [
@@ -38,15 +39,11 @@ export function FooterSection() {
                   Transformamos el cuero en arte funcional. Cada pieza es única, hecha con tradición y materiales de calidad que perduran en el tiempo.
                 </p>
                 <ul className="space-y-2 text-sm text-neutral-600 dark:text-neutral-400">
-                  <li className="flex items-center gap-2">
-                    <IconPhone size={16} /> +52 55 1234 5678
-                  </li>
-                  <li className="flex items-center gap-2 break-all">
-                    <IconMail size={16} /> contacto@cinceladocuero.com
-                  </li>
-                  <li className="flex items-center gap-2">
-                    <IconMapPin size={16} /> Ciudad de México, México
-                  </li>
+                  {contact.map((info, index) => (
+                    <Link href={info.href} className="flex items-center gap-2 cursor-pointer hover:underline hover:text-white" target="_blank" key={index}>
+                      <info.icon size={16} /> {info.value}
+                    </Link>
+                  ))}
                 </ul>
               </div>
 

@@ -1,11 +1,12 @@
 "use client";
 
-import { IconShoppingBag, IconStar, IconX, IconClock, IconPalette, IconTool } from "@tabler/icons-react";
+import { IconShoppingBag, IconStar, IconX, IconClock, IconPalette, IconTool, IconPhoneCall } from "@tabler/icons-react";
 import { motion, AnimatePresence } from "motion/react";
 import { useState, useEffect, useMemo } from "react";
-import { Button } from "../ui/button";
+import { ButtonSimple } from "../ui/btn";
 import { Title } from "../ui/title";
 import { products as productos } from "@/data/products";
+import { contact } from "@/data/contact-info";
 import Image from "next/image";
 
 interface ProductCardProps {
@@ -451,11 +452,7 @@ export const Productos = () => {
             <p className="text-gray-600 mb-6">
               Contáctanos para conocer más detalles, precios personalizados y tiempos de entrega
             </p>
-            <Button 
-              title="Solicitar información" 
-              url="/contact" 
-              icon={<IconShoppingBag className="text-white" />} 
-            />
+            <ButtonSimple title="Llámanos" href={contact[0].href} icon={<IconPhoneCall className="text-white" />} />
           </motion.div>
         </div>
       </div>

@@ -40,7 +40,7 @@ export const contact: Contact[] = [
       icon: IconMapPin,
       title: "Ubicación",
       value: "San Juanito de Escobedo, MX",
-      href: "#"
+      href: "https://maps.app.goo.gl/K317ghUUb6G3hBtb7"
     }
 ]
 

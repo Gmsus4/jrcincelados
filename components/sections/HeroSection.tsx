@@ -1,11 +1,9 @@
 "use client";
 
-import { motion } from "motion/react";
 import Image from "next/image";
-import Link from "next/link";
 import { useState, useEffect } from "react";
 import { Button } from "../ui/button";
-import { IconBrandWhatsappFilled, IconEye } from "@tabler/icons-react";
+import { IconBrandWhatsappFilled, IconEye, IconShoppingBag } from "@tabler/icons-react";
 
 export function HeroSectionCopy() {
   const [scrollY, setScrollY] = useState(0);
@@ -31,7 +29,10 @@ export function HeroSectionCopy() {
           <span className="md:text-6xl text-5xl">Cada pieza habla de autenticidad, fuerza y dedicación.</span>
           <h1 className="md:text-2xl text-xl 2xl:w-full md:w-4/5 w-full">Creamos cinturones, fundas y accesorios de cuero, <br /> hechos a mano para quienes valoran lo auténtico y duradero.</h1>
           {/* <Button title="Work with us" btnColor="bg-dark" textColor="text-white" circleColor="bg-white" btnColorFull="bg-white" textColorHover="text-dark" url="/contact" icon={<Icon24Hours className="text-dark" />} /> */}
-          <Button title="Contáctanos" circleColor="bg-white" btnColorFull="bg-white" btnColor="bg-dark" textColor="text-white" textColorHover="group-hover:text-dark" url="/contact" icon={<IconBrandWhatsappFilled className="text-dark"/>} />
+          <div className="flex md:flex-row flex-col gap-4">
+            <Button title="Ver productos" circleColor="bg-white" btnColorFull="bg-white" btnColor="bg-dark" textColor="text-white" textColorHover="group-hover:text-dark" url={`#products`} icon={<IconShoppingBag className="text-dark"/>}/>
+            <Button title="Contáctanos por WhatsApp" circleColor="bg-green-500" btnColorFull="bg-green-500" btnColor="bg-dark" textColor="text-white" textColorHover="group-hover:text-white" url={``} icon={<IconBrandWhatsappFilled className="text-white"/>} />
+          </div>
 
           {/* Investigar que pedo de por que no se pone el texto en negro al hacer hover */}
         </div>

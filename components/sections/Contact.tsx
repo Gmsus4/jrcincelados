@@ -19,17 +19,19 @@ export const Contact = () => {
               </div>
               <div className="flex flex-col w-full gap-4">
                   {contactInfo.map((item, index) => (
-                      <Link href={item.href} key={index} className="flex md:flex-row flex-col justify-between items-start">
-                        <div className="flex md:gap-4 gap-2 items-center">
+                      <div key={index} className="flex md:flex-row flex-col justify-between items-start">
+                        <Link href={item.href} className="flex md:gap-2 gap-2 items-start hover:underline" target="_blank">
                           <item.icon className="h-6 w-6 text-neutral-800 dark:text-neutral-200"/>
                           <h3 className="text-lg text-neutral-800 dark:text-neutral-200 font-bold">
                               {item.title}
                           </h3>
-                        </div>
-                          <p className="text-lg text-neutral-600 dark:text-neutral-400 mt-1 break-all">
-                              {item.value}
-                          </p>
-                      </Link>
+                        </Link>
+                        <Link href={item.href} target="_blank" className="hover:underline">
+                            <p className="text-lg text-neutral-600 dark:text-neutral-400 mt-1 break-all">
+                                {item.value}
+                            </p>
+                        </Link>
+                      </div>
                   ))}
               </div>
               
