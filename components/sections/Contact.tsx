@@ -21,13 +21,13 @@ export const Contact = () => {
                   {contactInfo.map((item, index) => (
                       <div key={index} className="flex md:flex-row flex-col justify-between items-start">
                         <Link href={item.href} className="flex md:gap-2 gap-2 items-start hover:underline" target="_blank">
-                          <item.icon className="h-6 w-6 text-neutral-800 dark:text-neutral-200"/>
-                          <h3 className="text-lg text-neutral-800 dark:text-neutral-200 font-bold">
+                          <item.icon className="h-6 w-6 text-neutral-200"/>
+                          <h3 className="text-lg text-neutral-200 font-bold">
                               {item.title}
                           </h3>
                         </Link>
                         <Link href={item.href} target="_blank" className="hover:underline">
-                            <p className="text-lg text-neutral-600 dark:text-neutral-400 mt-1 break-all">
+                            <p className="text-lg text-neutral-400 mt-1 break-all">
                                 {item.value}
                             </p>
                         </Link>
@@ -49,7 +49,7 @@ export const Contact = () => {
                             rel="noopener noreferrer"
                             className={`${social.color} transition-colors duration-300`}
                         >
-                            <social.icon className="h-8 w-8 text-neutral-800 dark:text-neutral-200"/>
+                            <social.icon className="h-8 w-8 text-neutral-200"/>
                         </Link>
                     ))}
                 </div>

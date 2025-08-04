@@ -327,7 +327,7 @@ function ProductModal({ producto, isOpen, onClose }: ProductModalProps) {
   );
 }
 
-export const Productos = () => {
+export const Products = () => {
   const [filtroCategoria, setFiltroCategoria] = useState<string>("Todos");
   const [modalProducto, setModalProducto] = useState<typeof productos[0] | null>(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -356,7 +356,7 @@ export const Productos = () => {
 
   return (
     <>
-      <div className="md:min-h-screen h-auto w-full bg-gray-50" id="products">
+      <div className="md:min-h-screen h-auto w-full bg-gray-50 py-20" id="products">
         <div className="max-w-7xl mx-auto md:p-20 sm:p-10 sm:pt-36 p-4">
           
           {/* Header */}

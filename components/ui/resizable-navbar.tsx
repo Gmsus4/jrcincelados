@@ -103,8 +103,8 @@ export const NavBody = ({ children, className, visible }: NavBodyProps) => {
         maxWidth: "98%",
       }}
       className={cn(
-        "relative z-[60] mx-auto hidden w-full max-w-7xl flex-row items-center justify-between self-start rounded-b-xl bg-transparent px-4 py-2 lg:flex dark:bg-transparent",
-        visible && "bg-white/80 dark:bg-darkB",
+        "relative z-[60] mx-auto hidden w-full max-w-7xl flex-row items-center justify-between self-start rounded-b-xl bg-transparent px-4 py-2 lg:flex",
+        visible && "bg-darkB",
         className,
       )}
     >
@@ -136,7 +136,7 @@ export const NavItems = ({ items, className, onItemClick }: NavItemsProps) => {
           {hovered === idx && (
             <motion.div
               layoutId="hovered"
-              className="absolute inset-0 h-full w-full rounded-full bg-gray-100 dark:bg-neutral-800"
+              className="absolute inset-0 h-full w-full rounded-full bg-neutral-800"
             />
           )}
           <span className="relative z-20">{item.name}</span>
@@ -166,7 +166,7 @@ export const MobileNav = ({ children, className, visible }: MobileNavProps) => {
       }}
       className={cn(
         "relative z-50 mx-auto flex w-full max-w-[calc(100vw-2rem)] flex-col items-center justify-between bg-transparent px-0 py-2 lg:hidden",
-        visible && "bg-white/80 dark:bg-darkB w-full mx-0 max-w-none rounded-none",
+        visible && "bg-darkB w-full mx-0 max-w-none rounded-none",
         className,
       )}
     >
@@ -224,9 +224,9 @@ export const MobileNavToggle = ({
   onClick: () => void;
 }) => {
   return isOpen ? (
-    <IconX className="text-black dark:text-white" onClick={onClick} />
+    <IconX className="text-white" onClick={onClick} />
   ) : (
-    <IconMenu2 className="text-black dark:text-white" onClick={onClick} />
+    <IconMenu2 className="text-white" onClick={onClick} />
   );
 };
 
@@ -258,11 +258,11 @@ export const NavbarLogo = () => {
         className="rounded-full"
       />
       {showText && (
-        <span className="font-medium text-black dark:text-white">
+        <span className="font-medium text-white">
           JR Cincelados
         </span>
       )}
-      {/* <span className="font-medium text-black dark:text-white">JR Cincelados</span> */}
+      {/* <span className="font-medium text-white">JR Cincelados</span> */}
     </a>
   );
 };

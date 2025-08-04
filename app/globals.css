@@ -7,9 +7,7 @@
   --darkB: #101014;
   --whiteA: #e7e7e7;
   --whiteB: #fafafa;
-  
-
-
+  --caballo: #D0D1DB;
 
 
   --primary: #F2EADF;
@@ -32,6 +30,8 @@
   --color-darkB: var(--darkB);
   --color-whiteA: var(--whiteA);
   --color-whiteB: var(--whiteB);
+
+  --color-caballo: var(--caballo);
   
 
   --color-primary: var(--primary);
@@ -42,13 +42,13 @@
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
 }
-
+/* 
 @media (prefers-color-scheme: dark) {
   :root {
     --background: #0a0a0a;
     --foreground: #ededed;
   }
-}
+} */
 
 
 html {

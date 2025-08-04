@@ -1,17 +1,14 @@
 import { NavbarResizable } from '../components/navbarResizable';
 import { FooterSection } from "@/components/sections/Footer";
-import { HeroSectionCopy } from '@/components/sections/HeroSection';
+import { HeroSection } from '@/components/sections/HeroSection';
 import { AboutUs } from '@/components/sections/AboutUs';
 import { FAQs } from '@/components/sections/FAQs';
 import { Contact } from '@/components/sections/Contact';
 import { Testimonials } from '@/components/sections/Testimonials';
-import { Productos } from '@/components/sections/Products';
+import { Products } from '@/components/sections/Products';
 
 
-/*
-Proceso de elaboracion
-Productos
-*/
+/* Proceso de elaboracion */
 
 export default function Home() {
   return (
@@ -20,10 +17,9 @@ export default function Home() {
         <NavbarResizable />
       </header>
       <main className="w-full h-full">
-        {/* <HeroSection /> */}
-        <HeroSectionCopy />
+        <HeroSection />
         <AboutUs />
-        <Productos />
+        <Products />
         <Testimonials />
         <FAQs />
         <Contact/>

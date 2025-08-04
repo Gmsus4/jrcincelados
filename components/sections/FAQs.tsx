@@ -20,7 +20,7 @@ export const FAQs = () => {
                 </div>
 
                 {/* TikTok promo section */}
-                <div className="flex flex-col items-center 2xl:items-start text-center 2xl:text-left gap-4">
+                <div className="flex-col items-center 2xl:items-start text-center 2xl:text-left gap-4 hidden 2xl:flex">
                     <h3 className="text-2xl text-dark">¿Quieres ver más sobre cincelados?</h3>
                     <p className="text-lg text-gray-700 max-w-2xl">
                         Descubre técnicas, herramientas y procesos en nuestra cuenta de TikTok. Ideal si te interesa el arte detrás del cincelado artesanal.
@@ -31,6 +31,15 @@ export const FAQs = () => {
 
             <div className="2xl:col-span-3 col-span-5"> 
                 <FAQSection />
+
+                {/* TikTok promo section */}
+                <div className="2xl:hidden flex flex-col items-center justify-center text-center gap-4 w-full h-56 my-10">
+                    <h3 className="text-2xl text-dark">¿Quieres ver más sobre cincelados?</h3>
+                    <p className="text-lg text-gray-700 max-w-2xl">
+                        Descubre técnicas, herramientas y procesos en nuestra cuenta de TikTok. Ideal si te interesa el arte detrás del cincelado artesanal.
+                    </p>
+                    <ButtonSimple title="Ver en Tiktok" href="/" icon={<IconBrandTiktok className="text-white" />} />
+                </div>
             </div>
         </div>
     </div>
