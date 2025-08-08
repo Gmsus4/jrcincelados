@@ -23,7 +23,7 @@ export const products: Product[] = [
     fullDescription:
       "Este cinturón artesanal está elaborado con cuero vacuno de primera calidad...",
     price: "$850",
-    image: "https://images.pexels.com/photos/5103042/pexels-photo-5103042.jpeg",
+    image: "/cintoArtesanal.webp",
     category: "Cinturones",
     rating: 4.9,
     available: true,
@@ -40,7 +40,7 @@ export const products: Product[] = [
     fullDescription:
       "Bolso de mano elaborado con cuero de cabra de primera calidad...",
     price: "$2,450",
-    image: "https://images.pexels.com/photos/33223468/pexels-photo-33223468.jpeg",
+    image: "/bolso.webp",
     category: "Bolsos",
     rating: 5.0,
     available: true,
@@ -57,7 +57,7 @@ export const products: Product[] = [
     fullDescription:
       "Cartera ultra delgada diseñada para el estilo de vida moderno...",
     price: "$650",
-    image: "https://images.pexels.com/photos/4452504/pexels-photo-4452504.jpeg",
+    image: "/cartera.webp",
     category: "Carteras",
     rating: 4.8,
     available: false,
@@ -74,7 +74,7 @@ export const products: Product[] = [
     fullDescription:
       "Funda protectora diseñada específicamente para laptops, con acolchado interno...",
     price: "$1,200",
-    image: "https://images.pexels.com/photos/5951375/pexels-photo-5951375.jpeg",
+    image: "/laptop.webp",
     category: "Fundas",
     rating: 4.9,
     available: true,
@@ -91,7 +91,7 @@ export const products: Product[] = [
     fullDescription:
       "Llavero artesanal elaborado con retazos de cuero premium de nuestros otros productos...",
     price: "$180",
-    image: "https://images.pexels.com/photos/33242820/pexels-photo-33242820.jpeg",
+    image: "/llavero.webp",
     category: "Accesorios",
     rating: 4.7,
     available: true,
@@ -108,7 +108,7 @@ export const products: Product[] = [
     fullDescription:
       "Mochila de estilo vintage elaborada con cuero vacuno que ha sido tratado...",
     price: "$3,200",
-    image: "https://images.pexels.com/photos/9912145/pexels-photo-9912145.jpeg",
+    image: "/mochila.webp",
     category: "Mochilas",
     rating: 4.9,
     available: false,

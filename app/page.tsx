@@ -6,6 +6,8 @@ import { FAQs } from '@/components/sections/FAQs';
 import { Contact } from '@/components/sections/Contact';
 import { Testimonials } from '@/components/sections/Testimonials';
 import { Products } from '@/components/sections/Products';
+import Link from 'next/link';
+import { Navbar } from '@/components/Navbar';
 
 
 /* Proceso de elaboracion */
@@ -13,17 +15,26 @@ import { Products } from '@/components/sections/Products';
 export default function Home() {
   return (
     <div className="font-sans">
-      <header className="w-full fixed z-50">
+      {/* <header className="w-full">
         <NavbarResizable />
+        <Navbar />
       </header>
       <main className="w-full h-full">
         <HeroSection />
-        <AboutUs />
         <Products />
+        <AboutUs />
         <Testimonials />
         <FAQs />
         <Contact/>
-      </main>
+      </main> */}
+
+      <Navbar />
+      <HeroSection />
+      <Products />
+      <AboutUs />
+      <Testimonials />
+      <FAQs />
+      <Contact />
       <FooterSection />
     </div>
   );

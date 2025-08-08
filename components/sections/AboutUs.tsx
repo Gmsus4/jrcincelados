@@ -24,7 +24,7 @@ export const AboutUs = () => {
               width={1200}
               height={800}
               unoptimized={true}
-              src="https://images.pexels.com/photos/4452611/pexels-photo-4452611.jpeg" 
+              src="/taller.webp" 
               alt="Taller artesanal de JR Cincelados mostrando herramientas de cuero y trabajo en proceso"
               className="w-full h-full object-cover"
             />
@@ -54,7 +54,7 @@ export const AboutUs = () => {
               width={1200}
               height={800}
               unoptimized={true}
-              src="https://images.pexels.com/photos/5095283/pexels-photo-5095283.jpeg" 
+              src="/procesoArtesanal.webp" 
               alt="Manos de artesano trabajando cuero con herramientas tradicionales"
               className="w-full h-full object-cover"
             />
@@ -70,7 +70,7 @@ export const AboutUs = () => {
               width={1200}
               height={800}
               unoptimized={true}
-              src="https://images.pexels.com/photos/4452637/pexels-photo-4452637.jpeg" 
+              src="/materiales.webp" 
               alt="Selección de cueros de primera calidad en diferentes tonos y texturas"
               className="w-full h-full object-cover"
             />
@@ -96,7 +96,7 @@ export const AboutUs = () => {
                 quality={95}
                 width={1200}
                 height={800}
-                src="https://images.pexels.com/photos/31367059/pexels-photo-31367059.jpeg" 
+                src="/producto1.webp" 
                 alt="Cinto clásico de cuero marrón con hebilla elegante"
                 className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
               />
@@ -106,7 +106,7 @@ export const AboutUs = () => {
                 quality={95}
                 width={1200}
                 height={800} 
-                src="https://images.pexels.com/photos/27467423/pexels-photo-27467423.jpeg" 
+                src="/producto2.webp" 
                 alt="Cinto personalizado con grabado especial"
                 className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
               />
@@ -116,7 +116,7 @@ export const AboutUs = () => {
                 quality={95}
                 width={1200}
                 height={800} 
-                src="https://images.pexels.com/photos/32096436/pexels-photo-32096436.jpeg" 
+                src="/producto3.webp" 
                 alt="Colección de accesorios de cuero artesanales"
                 className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
               />
@@ -133,7 +133,7 @@ export const AboutUs = () => {
                 quality={95}
                 width={1200}
                 height={800} 
-                src="https://images.pexels.com/photos/4452395/pexels-photo-4452395.jpeg" 
+                src="/textura.webp" 
                 alt="Patrón de textura de cuero"
                 className="w-full h-full object-cover rounded-lg"
               />

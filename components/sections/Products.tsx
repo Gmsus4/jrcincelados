@@ -43,7 +43,11 @@ function ProductCard({ producto, index, onOpenModal }: ProductCardProps) {
         {/* Imagen del producto */}
         <div className="relative aspect-square overflow-hidden bg-gray-100">
           <div className="w-full h-full">
-            <img
+            <Image
+              quality={95}
+              width={1200}
+              height={800}
+              unoptimized={true}
               src={producto.image}
               alt={producto.name}
               className="w-full h-full object-cover transition-transform duration-300 hover:scale-105"
