@@ -23,7 +23,7 @@ export function NavbarResizable() {
         {/* Desktop Navigation */}
         <NavBody>
           <NavbarLogo />
-          <NavItems items={navItems} />
+          {/* <NavItems items={navItems} /> */}
           <div className="flex items-center gap-4">
             {/* <NavbarButton variant="secondary">Login</NavbarButton> */}
             <NavbarButton href="" variant="primary" className="flex gap-2 items-center group relative overflow-hidden rounded-2xl cursor-pointer border-2 border-white/30 bg-white/10 backdrop-blur-sm font-semibold text-white transition-all duration-300 hover:border-white/50">
@@ -49,11 +49,11 @@ export function NavbarResizable() {
             {navItems.map((item, idx) => (
               <a
                 key={`mobile-link-${idx}`}
-                href={item.link}
+                href={item.href}
                 onClick={() => setIsMobileMenuOpen(false)}
                 className="relative text-neutral-300"
               >
-                <span className="block">{item.name}</span>
+                <span className="block">{item.title}</span>
               </a>
             ))}
             <div className="flex w-full flex-col gap-4">
