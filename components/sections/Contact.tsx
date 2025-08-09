@@ -47,7 +47,6 @@ export const Contact = () => {
                             href={social.href}
                             target="_blank"
                             rel="noopener noreferrer"
-                            className={`${social.color} transition-colors duration-300`}
                         >
                             <social.icon className="h-8 w-8 text-neutral-200"/>
                         </Link>
