@@ -8,6 +8,7 @@ import { Title } from "../ui/title";
 import { products as productos } from "@/data/products";
 import { contact } from "@/data/contact-info";
 import Image from "next/image";
+import { Lens } from "../ui/lens";
 
 interface ProductCardProps {
   producto: typeof productos[0];
@@ -215,6 +216,7 @@ function ProductModal({ producto, isOpen, onClose }: ProductModalProps) {
             <div className="flex md:flex-row flex-col w-full h-full md:max-h-[90vh]">
               {/* Imagen del producto */}
               <div className="md:w-1/2 w-full relative bg-gray-100 h-[40vh] md:h-auto md:min-h-0">
+              <Lens >
                 <img
                   src={producto.image}
                   alt={producto.name}
@@ -222,6 +224,7 @@ function ProductModal({ producto, isOpen, onClose }: ProductModalProps) {
                   onError={handleImageError}
                   loading="eager"
                 />
+              </Lens>
                 <div className="absolute top-4 right-4 flex flex-row gap-2">
                   <span className="bg-black/70 backdrop-blur-sm text-white text-xs px-3 py-1 rounded-full">
                     {producto.category}

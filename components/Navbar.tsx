@@ -26,7 +26,7 @@ export const Navbar = () => {
   // Efecto para detectar la sección activa basada en el scroll
   useEffect(() => {
     const handleScroll = () => {
-      const sections = navItems.map(item => item.link.replace('#', ''));
+      const sections = navItems.map(item => item.href.replace('#', ''));
       const scrollPosition = window.scrollY + 100; // Offset para activación temprana
 
       for (const sectionId of sections) {
@@ -117,11 +117,11 @@ export const Navbar = () => {
         >
           <ul className="flex flex-col font-medium p-4 lg:p-0 mt-4 rounded-lg lg:space-x-8 rtl:space-x-reverse lg:flex-row lg:mt-0 lg:border-0">
             {navItems.map((item, idx) => {
-              const isActive = isActiveLink(item.link);
+              const isActive = isActiveLink(item.href);
               return (
                 <li key={idx}>
                   <Link 
-                    href={item.link} 
+                    href={item.href} 
                     className={`block py-2 px-3 2xl:px-6 xl:px-4 md:py-1 rounded-sm text-sm font-medium ${
                       isActive
                         ? 'text-white bg-dark md:bg-dark'
@@ -130,7 +130,7 @@ export const Navbar = () => {
                     aria-current={isActive ? "page" : undefined}
                     onClick={handleLinkClick}
                   >
-                    {item.name}
+                    {item.title}
                   </Link>
                 </li>
               );

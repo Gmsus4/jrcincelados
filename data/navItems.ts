@@ -1,27 +1,50 @@
+import { createElement, ReactNode } from "react";
+import { 
+  Icon,
+  IconAirBalloonFilled,
+  IconContract,
+  IconFlagQuestion,
+  IconHelpCircle,
+  IconInfoCircle,
+  IconMail,
+  IconMessage,
+  IconPackage,
+  IconUser,
+  IconUserBolt,
+  IconUserQuestion,
+} from "@tabler/icons-react";
+
+
 export interface NavItem {
-  name: string;
-  link: string;
+  title: string;
+  href: string;
+  icon: Icon;
 }
 
 export const navItems: NavItem[] = [
 {
-    name: "Productos",
-    link: "#products",
+    title: "Productos",
+    href: "#products",
+    icon: IconPackage,
   },
   {
-    name: "Sobre Nosotros",
-    link: "#about",
+    title: "Sobre Nosotros",
+    href: "#about",
+    icon: IconInfoCircle,
   },
   {
-    name: "Testimoniales",
-    link: "#testimonials",
+    title: "Testimoniales",
+    href: "#testimonials",
+    icon: IconMessage,
   },
   {
-    name: "FAQs",
-    link: "#faqs",
+    title: "FAQs",
+    href: "#faqs",
+    icon: IconHelpCircle,
   },
   {
-    name: "Contacto",
-    link: "#contact",
+    title: "Contacto",
+    href: "#contact",
+    icon: IconMail,
   },
 ];

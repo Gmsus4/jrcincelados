@@ -14,7 +14,7 @@ export function FooterSection() {
   ];
 
   return (
-    <footer className="md:bg-white bg-darkB p-4 pt-2">
+    <footer className="md:bg-white bg-darkB p-4 pb-0 pt-2">
        <div className="bg-darkB rounded-lg">
           <div className="max-w-7xl mx-auto md:p-20 sm:p-10 sm:pt-36 p-4">
             
@@ -47,10 +47,10 @@ export function FooterSection() {
                   {navItems.map((link, index) => (
                     <li key={index}>
                       <Link
-                        href={link.link} 
+                        href={link.href} 
                         className="text-neutral-400 hover:text-white transition-colors"
                       >
-                        {link.name}
+                        {link.title}
                       </Link>
                     </li>
                   ))}
@@ -94,7 +94,7 @@ export function FooterSection() {
                     target="_blank"
                     rel="noopener noreferrer"
                     whileHover={{ scale: 1.1 }}
-                    className={`p-2 rounded-full border border-neutral-700 transition duration-700 hover:bg-${social.color}`}
+                    className={`p-2 rounded-full border border-neutral-700 transition duration-700`}
                   >
                     <social.icon className="h-5 w-5 text-neutral-300" />
                   </motion.a>

@@ -10,9 +10,8 @@ export interface Contact {
 
 export interface SocialMedia {
     icon: Icon;
-    name: string;
+    title: string;
     href: string;
-    color: string; 
 }
 
 export const imageContact = "/contacto.webp";
@@ -24,12 +23,12 @@ export const contact: Contact[] = [
       value: "+52 386 118 4250",
       href: "tel:+523861184250"
     },
-    {
-      icon: IconBrandWhatsapp,
-      title: "WhatsApp",
-      value: "+52 386 118 4250",
-      href: "https://wa.me/523861184250"
-    },
+    // {
+    //   icon: IconBrandWhatsapp,
+    //   title: "WhatsApp",
+    //   value: "+52 386 118 4250",
+    //   href: "https://wa.me/523861184250"
+    // },
     {
       icon: IconMail,
       title: "Email",
@@ -47,20 +46,17 @@ export const contact: Contact[] = [
 export const socialMedia: SocialMedia[] = [
     {
       icon: IconBrandInstagram,
-      name: "Instagram",
+      title: "Instagram",
       href: "https://www.instagram.com/jrcincelados/",
-      color: "pink-600"
     },
     {
       icon: IconBrandTiktok,
-      name: "Tiktok", 
+      title: "Tiktok", 
       href: "https://www.tiktok.com/@jrcincelados",
-      color: "blue-600"
     },
     {
       icon: IconBrandWhatsapp,
-      name: "WhatsApp", 
+      title: "WhatsApp", 
       href: "https://wa.me/523861184250",
-      color: "green-600"
     }
 ];
