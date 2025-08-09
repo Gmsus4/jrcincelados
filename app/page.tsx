@@ -77,7 +77,7 @@ export default function Home() {
           <SidebarSection />
         </aside>
 
-        <main id="main-content" className="ml-[60px]" role="main">
+        <main id="main-content" className="" role="main">
           {/* H1 principal oculto (si no está en Hero) */}
           <h1 className="sr-only">
             JR Cincelados - Productos de Cuero Artesanales en San Juanito de Escobedo
