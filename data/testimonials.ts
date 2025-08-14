@@ -13,7 +13,7 @@ export const testimonials: Testimonials[] = [
     quote:
       "La pura cajeta primo, algo bien recomendadisimo gracias 🙏🤠",
     name: "Alexander Torres",
-    location: "Guadalajara, Jalisco",
+    location: "Tijuana, Baja California",
     stars: 5,
     icon: IconBrandTiktok
   },
@@ -21,8 +21,8 @@ export const testimonials: Testimonials[] = [
     quote:
       "Que bonitos cintos yo ya tengo el mio y están hermosos se los recomiendo a todos el hace muy buen trabajo 👍",
     name: "Tortillero",
-    location: "",
-    stars: 4,
+    location: "San Juanito de Escobedo, Jalisco",
+    stars: 5,
     icon: IconBrandTiktok
   },
   {

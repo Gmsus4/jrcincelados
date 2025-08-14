@@ -16,6 +16,7 @@ export const InfiniteMovingCards = ({
     name: string;
     location: string;
     stars: number;
+    icon?: React.ComponentType<any>;
   }[];
   direction?: "left" | "right";
   speed?: "fast" | "normal" | "slow";
@@ -87,45 +88,54 @@ export const InfiniteMovingCards = ({
           pauseOnHover && "hover:[animation-play-state:paused]",
         )}
       >
-        {items.map((item, idx) => (
-          <li
-            className="relative w-[350px] max-w-full shrink-0 rounded-2xl border border-gray-200 px-8 py-6 md:w-[450px] dark:bg-whiteB"
-            key={item.name}
-          >
-            <blockquote>
-              <div
-                aria-hidden="true"
-                className="user-select-none pointer-events-none absolute -top-0.5 -left-0.5 -z-1 h-[calc(100%_+_4px)] w-[calc(100%_+_4px)]"
-              ></div>
-              <div className="flex flex-col items-baseline gap-4">
-                <div className="flex gap-2">
-                {[...Array(5)].map((_, i) => (
-                  <span key={i}>
-                    {i < item.stars ? (
-                      <IconStarFilled className="text-amber-300" />
-                    ) : (
-                      <IconStar className="text-amber-300" />
-                    )}
-                  </span>
-                ))}
-                </div>
-                <span className="relative z-20 text-lg leading-[1.6] font-normal text-[#3d3d47]">
-                  {item.quote}
-                </span>
-                <div className="relative z-20 mt-6 flex flex-row items-center">
-                  <span className="flex flex-col gap-1">
-                    <span className="text-xl leading-[1.6] text-dark font-light">
-                      {item.name}
+        {items.map((item, idx) => {
+          const IconComponent = item.icon;
+          return (
+            <li
+              className="relative w-[350px] max-w-full shrink-0 rounded-2xl border border-gray-200 px-8 py-6 md:w-[450px] dark:bg-whiteB"
+              key={item.name}
+            >
+              <blockquote>
+                <div
+                  aria-hidden="true"
+                  className="user-select-none pointer-events-none absolute -top-0.5 -left-0.5 -z-1 h-[calc(100%_+_4px)] w-[calc(100%_+_4px)]"
+                ></div>
+                <div className="flex flex-col items-baseline gap-4">
+                  <div className="flex gap-2">
+                  {[...Array(5)].map((_, i) => (
+                    <span key={i}>
+                      {i < item.stars ? (
+                        <IconStarFilled className="text-amber-300" />
+                      ) : (
+                        <IconStar className="text-amber-300" />
+                      )}
                     </span>
-                    {/* <span className="text-sm leading-[1.6] font-normal text-neutral-500 dark:text-gray-400">
-                      {item.title}
-                    </span> */}
+                  ))}
+                  </div>
+                  <span className="relative z-20 text-lg leading-[1.6] font-normal text-[#3d3d47]">
+                    {item.quote}
                   </span>
+                  <div className="relative z-20 mt-6 flex flex-row items-center justify-between w-full">
+                    <span className="flex flex-col gap-1">
+                      <span className="text-xl leading-[1.6] text-dark font-light">
+                        {item.name}
+                      </span>
+                      <span className="text-sm leading-[1.6] font-normal text-neutral-500 dark:text-gray-400">
+                        {item.location}
+                      </span>
+                    </span>
+                    {/* Icono de red social */}
+                    {IconComponent && (
+                      <div className="flex items-center justify-center w-10 h-10 rounded-full bg-gray-100 hover:bg-gray-200 transition-colors">
+                        <IconComponent className="w-5 h-5 text-gray-600" />
+                      </div>
+                    )}
+                  </div>
                 </div>
-              </div>
-            </blockquote>
-          </li>
-        ))}
+              </blockquote>
+            </li>
+          );
+        })}
       </ul>
     </div>
   );
